@@ -1,45 +1,45 @@
 #include "ekonomi.h"
 #include <math.h>
 
-double inflation_value(double price_year_now, double price_year_past)
+double inflation_value(double money_value_now, double money_value_past)
 {
-    double result = (price_year_now - price_year_past) / price_year_past * 100;
+    double result = (money_value_now - money_value_past) / money_value_past * 100;
     return result;
 }
 
-double interest_simple(double price_money, double price_interest, double years)
+double interest_simple(double money_value, double interest_value, double years)
 {
-    double result = price_money * price_interest * years;
-    return result + price_money;
+    double result = money_value * interest_value * years;
+    return result + money_value;
 }
 
-double compound_interest(double price_money, double price_interest, double years)
+double compound_interest(double money_value, double interest_value, double years)
 {
-    double price_money_new = price_money;
+    double money_value_new = money_value;
 
     for (int i = 0; i < years; i++)
     {
-        price_money_new += price_money_new * price_interest;
+        money_value_new += money_value_new * interest_value;
     }
-    return price_money_new;
+    return money_value_new;
 }
 
-double present_value(double price_money, double price_interest, double years)
+double present_value(double money_value, double interest_value, double years)
 {
-    double present_value = price_money / (pow(1 + price_interest, years));
+    double present_value = money_value / (pow(1 + interest_value, years));
 
     return present_value;
 }
 
-double compound_periods(double price_money, double price_interest, double years)
+double compound_periods(double money_value, double interest_value, double years)
 {
-    double price_money_new = price_money;
+    double money_value_new = money_value;
 
     for (int i = 0; i < years; i++)
     {
-        price_money_new += price_money_new * (price_interest / years);
+        money_value_new += money_value_new * (interest_value / years);
     }
-    return price_money_new;
+    return money_value_new;
 }
 
 double interest_rate(double future_value, double present_value, double years)
