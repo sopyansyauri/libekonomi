@@ -3,5 +3,5 @@
 !.gitignore
 !.travis.yml
 build/
-libsum-*
-libsum_*
+libekonomi-*
+libekonomi_*
