@@ -2,7 +2,7 @@
 
 #define EKONOMI_H
 
-extern double inflation_value(double money_value_now, double money_value_past);
+extern double inflation_rate(double money_value_now, double money_value_past);
 extern double interest_simple(double money_value, double interest_value, double years);
 extern double compound_interest(double money_value, double interest_value, double years);
 extern double present_value(double money_value, double interest_value, double years);

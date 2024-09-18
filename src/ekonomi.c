@@ -1,7 +1,7 @@
 #include "ekonomi.h"
 #include <math.h>
 
-double inflation_value(double money_value_now, double money_value_past)
+double inflation_rate(double money_value_now, double money_value_past)
 {
     double result = (money_value_now - money_value_past) / money_value_past * 100;
     return result;
